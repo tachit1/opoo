@@ -1,0 +1,136 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffe6e6;
+    color: #333;
+    position: relative; /* อ้างอิงสำหรับลูกโป่ง */
+    overflow: hidden; /* ป้องกันการเลื่อน */
+}
+
+.b1 {
+    position: absolute;   /* ใช้ position เพื่อย้ายตำแหน่ง */
+    top: 50px;            /* ระยะจากด้านบน 50px */
+    left: 100px;          /* ระยะจากด้านซ้าย 100px */
+    width: 300px;
+    height: 200px;
+    border: 5px solid #c9887c;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+}
+
+.message-box {
+    background: radial-gradient(circle, #865050, #af5858);
+    border: 2px solid #af5858;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h2 {
+    color: #fff;
+    font-size: 36px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    animation: colorChange 4s ease infinite;
+}
+
+@keyframes colorChange {
+    0% { color: #ff6347; }
+    50% { color: #ffcc33; }
+    100% { color: #6bffb3; }
+}
+
+.poo {
+    display: none;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: #fff;
+}
+
+button {
+    background: linear-gradient(90deg, #ff6347, #ffcc33);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, background 0.2s;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #ffcc33, #6bffb3);
+    transform: scale(1.1);
+}
+
+.a1 {
+    display: none;
+}
+
+.b2 {
+    position: absolute;
+    top: 50px; /* ขยับลง */
+    z-index: -1; /* ทำให้ภาพอยู่หลังสุด */
+    transform: translateX(-580px); /* ขยับไปทางซ้าย 50px */
+}
+
+.small-text {
+    font-size: 12px; /* กำหนดขนาดเล็กลง */
+    color: #666;     /* สีเทาเพื่อแยกให้ชัดเจน */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(100vh); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+.balloon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #ff6347;
+    border-radius: 50%;
+    animation: floatUp 6s ease-in-out infinite;
+    z-index: 1; /* เพิ่ม z-index เพื่อให้ลูกโป่งอยู่ด้านบน */
+}
+
+@keyframes fireworks {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    25% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff6347;
+    border-radius: 50%;
+    animation: fireworks 2s ease-in-out forwards, floatUp 4s ease-in-out infinite;
+}

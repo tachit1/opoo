@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    position: relative;
+}
+.video-background {
+    position: absolute;
+    top: 50%; /* ขยับวิดีโอให้ลงมา */
+    left: 50%;
+    width: 100%; /* ปรับให้วิดีโอครอบเต็มพื้นที่ของ container */
+    height: 95%; /* ปรับให้วิดีโอสูงเต็ม container */
+    transform: translate(-50%, -50%); /* ทำให้วิดีโอตรงกลาง */
+    z-index: -1; /* วิดีโออยู่ด้านหลัง */
+    object-fit: cover; /* ครอบให้วิดีโอพอดีกับพื้นที่ */
+}
+.carousel-container {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel {
+    position: relative;
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease; /* การเลื่อนภาพ */
+}
+.carousel img {
+    width: 100%;        /* ให้ภาพครอบเต็มพื้นที่ของ container */
+    height: 100%;       /* ให้ภาพเต็ม container */
+    object-fit: cover;   /* ครอบภาพให้เต็มพื้นที่ โดยไม่ทำให้สัดส่วนภาพผิดเพี้ยน */
+    border-radius: 10px; /* เพิ่มขอบมนให้สวยงาม */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเล็กน้อย */
+}
+
+
+
+
+
+
